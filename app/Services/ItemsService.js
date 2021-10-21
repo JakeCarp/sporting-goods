@@ -12,6 +12,12 @@ export class ItemsService {
     removeCart(id) {
         const item = ProxyState.items.find(i => i.id == id)
         item.qtyInCart = 0
+        ProxyState.items = ProxyState.items
+    }
+    checkout() {
+        const items = ProxyState.items
+        items.forEach(i => i.qtyInCart = 0)
+        ProxyState.items = ProxyState.items
     }
 
 }

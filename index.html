@@ -17,14 +17,12 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-primary text-light no-select">
+    <nav class="navbar navbar-dark navbar-expand bg-primary text-light no-select justify-content-between">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://i.imgur.com/RGhFZ1E.jpg" height="45" alt="" loading="lazy">
-        <span class="ms-2">sporting-goods</span>
       </a>
       <!-- Button trigger modal -->
-      <button type="button" onclick="app.itemsController.showCart()" class="btn btn-primary btn-lg"
-        data-bs-toggle="modal" data-bs-target="#modelId">
+      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modelId">
         <i class="mdi mdi-cart"></i>
       </button>
 
@@ -40,8 +38,9 @@
             <div class="modal-body text-secondary" id="cart">
 
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Checkout</button>
+            <div class="modal-footer justify-content-between">
+              <p class="text-secondary"><b>$<span id="cart-total"></span></b></p>
+              <button type="button" class="btn btn-primary" onclick="app.itemsController.checkout()">Checkout</button>
             </div>
           </div>
         </div>
@@ -53,7 +52,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="app"></div>
+          <div id="app" class="d-flex row justify-content-around mt-4"></div>
         </div>
       </div>
     </div>
