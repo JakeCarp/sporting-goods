@@ -1,13 +1,17 @@
+import { ProxyState } from "../AppState.js"
 
 
 
 
 export class ItemsService {
-    addCart() {
-        console.log('added to cart')
+    addCart(id) {
+        const item = ProxyState.items.find(i => i.id == id)
+        item.qtyInCart++
+        ProxyState.items = ProxyState.items
     }
-    removeCart() {
-        console.log('removed from cart')
+    removeCart(id) {
+        const item = ProxyState.items.find(i => i.id == id)
+        item.qtyInCart = 0
     }
 
 }
