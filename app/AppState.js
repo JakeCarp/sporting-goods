@@ -1,9 +1,12 @@
+import { Item } from "./Models/Item.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
-  /** @type {import('./Models/Value').Value[]} */
-  values = []
+  /** @type {import('./Models/Item').Item[]} */
+  items = []
+  /**@type {import('./Models/Item').Item[]} */
+  cart = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
